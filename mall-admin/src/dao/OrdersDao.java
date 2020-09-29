@@ -111,13 +111,15 @@ public class OrdersDao {
 		DBUtil dbUtil = new DBUtil();
 		Connection conn = dbUtil.getConnection();
 		
-		String sql = "SELECT o.orders_id, o.product_id, o.orders_amount, o.orders_price, o.member_email, o.orders_addr, o.orders_state, o.orders_date, p.product_name FROM orders o INNER JOIN product p ON o.product_id=p.product_id WHERE orders_state=?";
+		String sql = "SELECT o.orders_id, o.product_id, o.orders_amount, o.orders_price, o.member_email, o.orders_addr, o.orders_state, o.orders_date, p.product_name FROM orders o INNER JOIN product p ON o.product_id=p.product_id WHERE o.orders_state= ?";
 		PreparedStatement stmt = conn.prepareStatement(sql);
 		stmt.setString(1, ordersState);
 		ResultSet rs = stmt.executeQuery();
 		
 		while(rs.next()) {
 			OrdersAndProduct oap = new OrdersAndProduct();
+			oap.orders = new Orders();
+			oap.product = new Product();
 			oap.orders.setOrdersId(rs.getInt("o.orders_id"));
 			oap.orders.setProductId(rs.getInt("o.product_id"));
 			oap.orders.setOrdersAmount(rs.getInt("o.orders_amount"));

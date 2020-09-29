@@ -24,12 +24,11 @@
 		
 		if(request.getParameter("ordersState") != null) {
 			ordersState = request.getParameter("ordersState");
-		} else {
-			ordersState = "";
-		}
-		OrdersDao ordersDao = new OrdersDao();
+		} 
 		
+		OrdersDao ordersDao = new OrdersDao();
 		ArrayList<OrdersAndProduct> list = null;
+		
 		if(ordersState.equals("")) {
 			list = ordersDao.selectOrdersList();
 		} else {
@@ -40,14 +39,13 @@
 		System.out.println(ordersState);
 	%>
 	<h1>주문 목록</h1>
-	<form action="<%=request.getContextPath() %>/orders/ordersList.jsp?ordersState=<%=ordersState%>" method="post">
+	<form action="<%=request.getContextPath() %>/orders/ordersList.jsp" method="post">
 		<select name="ordersState">
 			<option value="">선택</option>
 			<%
 				for(String s : stateList) {
 			%>
 						<option value="<%=s %>"><%=s %></option>
-						
 			<%
 				}
 			%>
