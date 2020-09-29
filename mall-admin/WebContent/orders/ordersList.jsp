@@ -40,14 +40,14 @@
 		System.out.println(ordersState);
 	%>
 	<h1>주문 목록</h1>
-	<form action="<%=request.getContextPath() %>/orders/ordersList.jsp" method="post">
-		<input type="hidden" name="ordersState" value="<%=ordersState%>">
+	<form action="<%=request.getContextPath() %>/orders/ordersList.jsp?ordersState=<%=ordersState%>" method="post">
 		<select name="ordersState">
 			<option value="">선택</option>
 			<%
 				for(String s : stateList) {
 			%>
 						<option value="<%=s %>"><%=s %></option>
+						
 			<%
 				}
 			%>
