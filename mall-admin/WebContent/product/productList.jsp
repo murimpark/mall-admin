@@ -68,7 +68,7 @@
 					if(p.getProductSoldout().equals("Y")){
 			%>
 					<tr>
-						<td><del><a class="btn btn-primary" href="<%=request.getContextPath() %>/product/productOne.jsp?productId=<%=p.getProductId()%>"><%=p.getProductId()%></a></del></td>
+						<td><del><a class="text-white" href="<%=request.getContextPath() %>/product/productOne.jsp?productId=<%=p.getProductId()%>"><%=p.getProductId()%></a></del></td>
 						<td><del><%=p.getCategoryId() %></del></td>
 						<td><del><%=p.getProductName() %></del></td>
 						<td><del><%=p.getProductPrice() %></del></td>
@@ -76,10 +76,10 @@
 					</tr>
 			<% 
 					}
-					else{
+					else {
 			%>
 					<tr>
-						<td><a class="btn btn-primary" href="<%=request.getContextPath() %>/product/productOne.jsp?productId=<%=p.getProductId()%>"><%=p.getProductId()%></a></td>
+						<td><a class="text-white" href="<%=request.getContextPath() %>/product/productOne.jsp?productId=<%=p.getProductId()%>"><%=p.getProductId()%></a></td>
 						<td><%=p.getCategoryId() %></td>
 						<td><%=p.getProductName() %></td>
 						<td><%=p.getProductPrice() %></td>

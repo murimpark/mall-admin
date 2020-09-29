@@ -50,9 +50,9 @@
 				}
 			%>
 		</select>
-		<button type="submit">주문상태별로 보기</button>
+		<button class="btn btn-primary" type="submit">주문상태별로 보기</button>
 	</form>
-	<table class="table">
+	<table class="table table-striped table-hover table-dark">
 		<thead>
 			<tr>
 				<td>orders_id</td>
@@ -64,7 +64,6 @@
 				<td>orders_addr</td>
 				<td>orders_state</td>
 				<td>orders_date</td>
-				<td>상태 수정</td>
 			</tr>
 		</thead>
 		<tbody>
@@ -81,7 +80,7 @@
 				<td><%=oap.orders.getOrdersAddr() %></td>
 				<td><%=oap.orders.getOrdersState() %></td>
 				<td><%=oap.orders.getOrdersDate() %></td>
-				<td><a href="<%=request.getContextPath() %>/orders/modifyOrdersState.jsp?ordersId=<%=oap.orders.getOrdersId()%>&ordersState=<%=oap.orders.getOrdersState()%>">상태 수정</a></td>
+				<td><a class="btn btn-primary" href="<%=request.getContextPath() %>/orders/modifyOrdersState.jsp?ordersId=<%=oap.orders.getOrdersId()%>&ordersState=<%=oap.orders.getOrdersState()%>">상태 수정</a></td>
 			</tr>
 			<%
 				}

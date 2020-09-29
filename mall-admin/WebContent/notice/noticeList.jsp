@@ -19,7 +19,7 @@
 		<jsp:include page="/inc/menu.jsp"></jsp:include>
 	</div>
 
-	<h1>공지</h1>
+	<h1>공지 관리</h1>
 	<div>
 		<a class="btn btn-primary" href="<%=request.getContextPath() %>/notice/addNotice.jsp">공지 추가</a>
 	</div>
@@ -42,9 +42,9 @@
 		%>
 			<tr>
 				<td><%=n.getNoticeId() %></td>
-				<td><a href="<%=request.getContextPath() %>/notice/noticeListOne.jsp?noticeId=<%=n.getNoticeId() %>"><%=n.getNoticeTitle() %></a></td>
+				<td><a class="text-white" href="<%=request.getContextPath() %>/notice/noticeListOne.jsp?noticeId=<%=n.getNoticeId() %>"><%=n.getNoticeTitle() %></a></td>
 				<td><%=n.getNoticeDate() %>
-				<th><a href="<%=request.getContextPath() %>/notice/deleteNoticeAction.jsp?noticeId=<%=n.getNoticeId() %>">삭제</a></th>
+				<th><a class="btn btn-primary" href="<%=request.getContextPath() %>/notice/deleteNoticeAction.jsp?noticeId=<%=n.getNoticeId() %>">삭제</a></th>
 			</tr>
 		<%
 			}
